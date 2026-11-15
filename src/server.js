@@ -6,9 +6,7 @@ const routes = require('./routes');
 
 const server = express();
 
-mongoose.connect('mongodb+srv://birohp:eu458787@cluster0-kbtrn.mongodb.net/omnistack8?retryWrites=true&w=majority', {
-    useNewUrlParser: true
-});
+mongoose.connect('mongodb+srv://birohp:eu458787@cluster0-kbtrn.mongodb.net/omnistack8?retryWrites=true&w=majority');
 
 server.use(cors());
 server.use(express.json());
