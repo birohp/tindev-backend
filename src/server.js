@@ -6,7 +6,12 @@ const routes = require('./routes');
 
 const server = express();
 
-mongoose.connect('mongodb+srv://birohp:eu458787@cluster0-kbtrn.mongodb.net/omnistack8?retryWrites=true&w=majority');
+const mongoUri = process.env.MONGODB_URI;
+if (!mongoUri) {
+  throw new Error('MONGODB_URI environment variable is not set');
+}
+
+mongoose.connect(mongoUri);
 
 server.use(cors());
 server.use(express.json());
